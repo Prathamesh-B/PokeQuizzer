@@ -54,34 +54,6 @@
   font-weight: bold;
 }
 
-.primary-btn {
-  width: 100%;
-  background: #e53935;
-  color: #fff;
-  border: none;
-  border-radius: 999px;
-  padding: 16px 0;
-  font-size: 1.1rem;
-  margin-top: 32px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.primary-btn:hover {
-  background: #c62828;
-}
-
-.home-page h2 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-  text-align: center;
-}
-
-.home-page p {
-  text-align: center;
-  color: #6d4c4c;
-  margin-bottom: 24px;
-}
-
 /* Responsive for desktop */
 @media (max-width: 400px) {
   .phone-container {
