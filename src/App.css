@@ -25,35 +25,6 @@
   overflow-y: auto;
 }
 
-.bottom-nav {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  background: #f8eaea;
-  border-top: 1px solid #e0cfcf;
-  padding: 12px 0;
-  z-index: 10;
-}
-
-.bottom-nav button {
-  background: none;
-  border: none;
-  font-size: 1.1rem;
-  color: #b77b7b;
-  padding: 6px 0;
-  flex: 1;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.bottom-nav button.active {
-  color: #e53935;
-  font-weight: bold;
-}
-
 /* Responsive for desktop */
 @media (max-width: 400px) {
   .phone-container {
