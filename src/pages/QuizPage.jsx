@@ -1,4 +1,9 @@
 import React from "react";
+import screen from "../assets/screen_bg.svg";
+import red_led from "../assets/red_led.svg";
+import yellow_led from "../assets/yellow_led.svg";
+import green_led from "../assets/green_led.svg";
+
 
 function QuizPage() {
     // Quiz state
@@ -121,8 +126,34 @@ function QuizPage() {
 
     return (
         <div className="quiz-page flex flex-col items-center justify-center h-full">
-            <div className="text-sm mb-2 text-poke-blue-700 font-semibold">
-                Question {questionNum}/{totalQuestions}
+            
+            <div className="relative mb-4 pt-2 flex items-center justify-center">
+                <img src={screen} alt="Quiz Screen" className="px-6" />
+                <img
+                    src={question.sprites.front_default}
+                    alt={question.name}
+                    className="w-44 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                />
+                <img
+                    src={
+                        result === null
+                            ? yellow_led
+                            : result === "correct"
+                            ? green_led
+                            : red_led
+                    }
+                    alt={
+                        result === null
+                            ? "Pending"
+                            : result === "correct"
+                            ? "Correct"
+                            : "Wrong"
+                    }
+                    className="w-10 h-10 absolute left-21 bottom-4"
+                />
+                <div className="absolute right-11 bottom-4 text-md mb-2 font-bold font-lexend text-gray-700">
+                    Question {questionNum}/{totalQuestions}
+                </div>
             </div>
             <h3 className="text-xl font-bold mb-2">
                 Which type is{" "}
@@ -132,20 +163,17 @@ function QuizPage() {
                 </span>
                 ?
             </h3>
-            <img
-                src={question.sprites.front_default}
-                alt={question.name}
-                className="w-24 mx-auto my-4"
-            />
-            <div className="flex flex-col gap-4 w-full max-w-xs">
+            <div className="grid grid-cols-2 gap-4 w-full p-6">
                 {choices.map((c) => (
                     <button
                         key={c}
-                        className={`primary-btn px-4 py-2 rounded-xl font-semibold border border-poke-blue-200 shadow-sm transition-colors ${
+                        className={`h-12 rounded-md font-semibold text-gray-700 bg-gray-200 border border-gray-300 shadow-sm transition-colors text-base ${
                             result && c === answer
-                                ? "bg-poke-green-500 text-white"
-                                : "bg-white hover:bg-poke-blue-50"
-                        } ${result ? "opacity-70" : ""}`}
+                                ? "bg-green-400 text-white border-green-500"
+                                : result
+                                ? "opacity-70"
+                                : "hover:bg-gray-300"
+                        }`}
                         onClick={() => !result && handleChoice(c)}
                         disabled={!!result}
                     >
@@ -153,21 +181,6 @@ function QuizPage() {
                     </button>
                 ))}
             </div>
-            {result && (
-                <div
-                    className={`mt-6 text-center font-bold ${
-                        result === "correct"
-                            ? "text-poke-green-600"
-                            : "text-poke-red-600"
-                    }`}
-                >
-                    {result === "correct"
-                        ? "Correct!"
-                        : `Wrong! Answer: ${
-                              answer.charAt(0).toUpperCase() + answer.slice(1)
-                          }`}
-                </div>
-            )}
         </div>
     );
 }
