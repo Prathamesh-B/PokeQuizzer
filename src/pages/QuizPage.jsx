@@ -18,7 +18,9 @@ function QuizPage() {
                 setLoading(true);
                 // Fetch a random pokemon
                 const id = Math.floor(Math.random() * 151) + 1;
-                const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+                const res = await fetch(
+                    `https://pokeapi.co/api/v2/pokemon/${id}`
+                );
                 const data = await res.json();
                 setQuestion(data);
                 // Get type
@@ -125,7 +127,8 @@ function QuizPage() {
             <h3 className="text-xl font-bold mb-2">
                 Which type is{" "}
                 <span className="text-poke-red">
-                    {question.name.charAt(0).toUpperCase() + question.name.slice(1)}
+                    {question.name.charAt(0).toUpperCase() +
+                        question.name.slice(1)}
                 </span>
                 ?
             </h3>

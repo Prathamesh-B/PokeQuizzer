@@ -1,13 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poetsen+One&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
 
 @theme {
     --font-poke: "Poetsen One", sans-serif;
+    --font-lexend: "Lexend", sans-serif;
+
+
+    --drop-shadow-poke-footer: 0px -4px 3px rgba(0, 0, 0, 0.15);
+
+
     --color-poke-blue: #2873b3;
     --color-poke-yellow: #f8d520;
     --color-poke-red: #f03d42;
     --color-poke-green: #2cb625;
+    --color-pokedex-bg: #d92c36;
+
+
     --color-poke-blue-50: #f7fafd;
     --color-poke-blue-100: #eaf3fa;
     --color-poke-blue-200: #d5e7f6;

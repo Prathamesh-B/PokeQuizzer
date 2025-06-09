@@ -11,22 +11,14 @@
   width: 375px;
   min-height: 700px;
   background: #fff;
-  border-radius: 20px;
+  border-radius: 6px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
   position: relative;
 }
 
-.main-content {
-  flex: 1;
-  padding: 24px 16px 80px 16px;
-  overflow-y: auto;
-}
-
 /* Responsive for desktop */
-@media (max-width: 400px) {
+@media (max-width: 431px) {
   .phone-container {
     width: 100vw;
     min-height: 100vh;
