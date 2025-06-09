@@ -4,15 +4,15 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 
 function RootLayout() {
-    return (
-        <div className="app-bg">
-            <div className="phone-container flex flex-col justify-between h-full max-h-screen ">
-                <Header />
-                <Outlet /> 
-                <Navbar />
-            </div>
-        </div>
-    );
+  return (
+    <div className="app-bg">
+      <div className="phone-container flex h-full max-h-screen flex-col justify-between">
+        <Header />
+        <Outlet />
+        <Navbar />
+      </div>
+    </div>
+  );
 }
 
 export default RootLayout;

@@ -13,8 +13,16 @@
   background: #fff;
   border-radius: 6px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.phone-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* Responsive for desktop */

@@ -1,11 +1,11 @@
-import pokedexHeader from '../assets/header.svg';
+import pokedexHeader from "../assets/header.svg";
 
 const Header = () => {
-    return (
-        <header id="header" className="flex flex-col items-center mb-0 px-0 pt-0">
-            <img src={pokedexHeader} alt="Pokedex Header" className="w-full  h-auto" />
-        </header>
-    );
+  return (
+    <header id="header" className="mb-0 flex flex-col items-center px-0 pt-0">
+      <img src={pokedexHeader} alt="Pokedex Header" className="h-auto w-full" />
+    </header>
+  );
 };
 
 export default Header;
