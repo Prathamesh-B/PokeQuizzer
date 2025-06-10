@@ -1,6 +1,8 @@
 import React from "react";
+import PokemonCard from "../components/PokemonCard";
 
 const REGIONS = [
+  { name: "All", offset: 0, limit: 1025 },
   { name: "Kanto", offset: 0, limit: 151 },
   { name: "Johto", offset: 151, limit: 100 },
   { name: "Hoenn", offset: 251, limit: 135 },
@@ -78,9 +80,13 @@ function PokedexPage() {
     // eslint-disable-next-line
   }, [pokemon, hasMore, isFetching]);
 
-  // Filter by search
+  // Enhanced search: by name or ID
   const filtered = search
-    ? pokemon.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
+    ? pokemon.filter(
+        (p) =>
+          p.name.toLowerCase().includes(search.toLowerCase()) ||
+          p.id.toString().includes(search.trim()),
+      )
     : pokemon;
 
   return (
@@ -88,7 +94,7 @@ function PokedexPage() {
       <h3 className="text-poke-red-700 mt-2 mb-2 text-center text-3xl font-bold tracking-widest drop-shadow">
         Pokédex
       </h3>
-      <div className="mb-2 flex gap-2">
+      <div className="mb-2 flex gap-2"> 
         <input
           className="font-lexend focus:border-poke-red-400 flex-1 rounded-xl border border-gray-300 bg-gray-50 px-3 py-2 text-base shadow focus:outline-none"
           placeholder="Search Pokémon..."
@@ -120,65 +126,7 @@ function PokedexPage() {
           </div>
         )}
         {filtered.map((p) => (
-          <div
-            key={p.id}
-            className="flex items-center gap-4 rounded-lg border border-gray-300 bg-white p-3 shadow transition hover:bg-gray-100"
-          >
-            <img
-              src={p.sprites.front_default}
-              alt={p.name}
-              className="h-16 w-16 rounded-full border-2 border-gray-300 bg-white shadow"
-            />
-            <div>
-              <div className="text-lg font-bold tracking-wide text-gray-800">
-                {p.name.charAt(0).toUpperCase() + p.name.slice(1)}
-              </div>
-              <div className="mt-1 flex gap-1 text-xs text-gray-500">
-                {p.types.map((t) => (
-                  <span
-                    key={t.type.name}
-                    className={`bg-opacity-80 rounded-full px-2 py-0.5 text-[11px] font-semibold text-white ${
-                      t.type.name === "fire"
-                        ? "bg-red-500"
-                        : t.type.name === "water"
-                          ? "bg-blue-500"
-                          : t.type.name === "grass"
-                            ? "bg-green-500"
-                            : t.type.name === "electric"
-                              ? "bg-yellow-400 text-yellow-900"
-                              : t.type.name === "bug"
-                                ? "bg-lime-600"
-                                : t.type.name === "poison"
-                                  ? "bg-purple-500"
-                                  : t.type.name === "flying"
-                                    ? "bg-sky-400"
-                                    : t.type.name === "psychic"
-                                      ? "bg-pink-500"
-                                      : t.type.name === "rock"
-                                        ? "bg-yellow-800"
-                                        : t.type.name === "ground"
-                                          ? "bg-yellow-700"
-                                          : t.type.name === "fairy"
-                                            ? "bg-pink-300 text-pink-900"
-                                            : t.type.name === "ice"
-                                              ? "bg-cyan-300 text-cyan-900"
-                                              : t.type.name === "dragon"
-                                                ? "bg-indigo-700"
-                                                : t.type.name === "dark"
-                                                  ? "bg-gray-800"
-                                                  : t.type.name === "steel"
-                                                    ? "bg-gray-400 text-gray-900"
-                                                    : t.type.name === "ghost"
-                                                      ? "bg-violet-700"
-                                                      : "bg-gray-400"
-                    }`}
-                  >
-                    {t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+          <PokemonCard key={p.id} pokemon={p} />
         ))}
         {loading && (
           <div className="text-poke-red-700 py-4 text-center font-bold">
