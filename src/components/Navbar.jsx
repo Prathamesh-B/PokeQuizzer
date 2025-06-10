@@ -4,9 +4,9 @@ import { MdCatchingPokemon } from "react-icons/md";
 import { TbHome, TbHomeFilled } from "react-icons/tb";
 
 const NavItem = ({ to, isActive, activeIcon, inactiveIcon, label }) => (
-  <Link to={to}>
+  <Link to={to} className="flex-1">
     <div
-      className={`flex flex-col items-center gap-0 px-2 py-1 text-white transition-colors ${
+      className={`flex w-full min-w-0 flex-col items-center gap-0 px-2 py-1 text-white transition-colors ${
         isActive ? "text-shadow-lg/30" : ""
       }`}
     >

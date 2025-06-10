@@ -6,9 +6,11 @@ import Navbar from "./components/Navbar";
 function RootLayout() {
   return (
     <div className="app-bg">
-      <div className="phone-container flex h-full max-h-screen flex-col justify-between">
+      <div className="phone-container">
         <Header />
-        <Outlet />
+        <div className="flex flex-1 items-center justify-center overflow-hidden">
+          <Outlet />
+        </div>
         <Navbar />
       </div>
     </div>
