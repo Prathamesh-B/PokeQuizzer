@@ -226,6 +226,11 @@ function QuizPage() {
     } else {
       setStreak(0);
     }
+
+    // Automatically move to next question after 2 seconds
+    setTimeout(() => {
+      handleNextQuestion();
+    }, 2000);
   }
 
   // Separate function to handle next question
@@ -252,13 +257,13 @@ function QuizPage() {
   // Setup Screen
   if (gameState === "setup") {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-6 px-3 pt-1 pb-4">
+      <div className="flex h-full flex-col items-center overflow-y-auto px-3 pt-1 pb-4 gap-3">
         {/* Quiz Type Selection */}
         <div className="w-full max-w-md">
           <h3 className="mb-3 text-lg font-semibold text-gray-700">
             Quiz Type
           </h3>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid gap-2">
             {QUIZ_TYPES.map((type) => (
               <button
                 key={type.id}
@@ -270,7 +275,7 @@ function QuizPage() {
                 onClick={() => setQuizType(type.id)}
               >
                 <div className="font-semibold">{type.name}</div>
-                {/* <div className="text-sm text-gray-600">{type.description}</div> */}
+                <div className="text-sm text-gray-600">{type.description}</div>
               </button>
             ))}
           </div>
@@ -335,7 +340,7 @@ function QuizPage() {
     else performance = "Keep practicing! 💪";
 
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-6 pt-1 pb-4 px-3">
+      <div className="flex h-full flex-col items-center justify-center gap-6 px-3 pt-1 pb-4">
         <div className="text-center">
           <h2 className="text-poke-blue-700 mb-2 text-3xl font-bold">
             Quiz Complete!
@@ -427,6 +432,17 @@ function QuizPage() {
             </div>
           )}
         </div>
+
+        {/* Timer */}
+        <div
+          className={`rounded-full px-3 py-1 text-lg font-bold ${
+            timeLeft <= 5
+              ? "bg-red-100 text-red-700"
+              : "bg-blue-100 text-blue-700"
+          }`}
+        >
+          {timeLeft}s
+        </div>
       </div>
 
       {/* Progress Bar */}
@@ -472,16 +488,7 @@ function QuizPage() {
 
       {/* Question */}
       <h3 className="mb-6 text-center text-xl font-bold">
-        {getQuestionText()} {/* Timer */}
-        <span
-          className={`w-fit rounded-full px-3 py-1 text-lg font-bold ${
-            timeLeft <= 5
-              ? "bg-red-100 text-red-700"
-              : "bg-blue-100 text-blue-700"
-          }`}
-        >
-          {timeLeft}s
-        </span>
+        {getQuestionText()}
       </h3>
 
       {/* Answer Choices */}
@@ -518,14 +525,6 @@ function QuizPage() {
               ? "✅ Correct!"
               : `❌ Wrong! It was ${formatChoice(answer)}`}
           </div>
-
-          {/* Next Question Button */}
-          <button
-            className="bg-poke-blue hover:bg-poke-blue-600 rounded-xl px-6 py-2 font-bold text-white transition-colors"
-            onClick={handleNextQuestion}
-          >
-            {questionNum < totalQuestions ? "Next Question" : "See Results"}
-          </button>
         </div>
       )}
     </div>
