@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 const HomePage = () => {
   return (
-    <div className="overflow-auto p-6">
+    <div className="pt-1 pb-4 px-3">
       <div className="flex h-full flex-col items-center justify-around">
         <img src="./Home_img.png" className="size-64" />
         <p className="font-poke text-center">

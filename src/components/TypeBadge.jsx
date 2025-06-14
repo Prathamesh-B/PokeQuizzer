@@ -21,7 +21,7 @@ const TYPE_COLORS = {
 };
 
 function TypeBadge({ type }) {
-  const iconSrc = `./src/assets/types/${type}-icon.svg`;
+  const iconSrc = `./types/${type}-icon.svg`;
   const colorClass =
     TYPE_COLORS[type] || "bg-gray-300 text-gray-900 border-gray-300";
   return (
