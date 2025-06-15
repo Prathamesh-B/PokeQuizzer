@@ -13,7 +13,7 @@ function PokemonCard({ pokemon }) {
   );
 
   return (
-    <div className="group relative flex h-fit items-center gap-4 rounded-xl border border-gray-200 bg-gradient-to-r from-white to-gray-50 p-4 shadow-md  hover:border-gray-300 hover:shadow-xl">
+    <div className="group relative flex h-fit items-center gap-4 rounded-xl border border-gray-200 bg-gradient-to-r from-white to-gray-50 p-4 shadow-md hover:border-gray-300 hover:shadow-xl">
       {/* Pokemon Image */}
       <div className="relative flex-shrink-0">
         <div className="h-20 w-20 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 p-2 shadow-lg">

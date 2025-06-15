@@ -188,7 +188,7 @@ function PokedexPage() {
   };
 
   return (
-    <div className="flex h-full flex-col items-center overflow-y-auto pt-1 pb-4 px-3">
+    <div className="flex h-full flex-col items-center overflow-y-auto px-3 pt-1 pb-4">
       <h3 className="text-poke-red-700 mt-2 mb-2 text-center text-3xl font-bold tracking-widest drop-shadow">
         Pokédex
       </h3>

@@ -60,3 +60,7 @@
   --color-poke-green-900: #071e06;
   --color-poke-green-950: #041103;
 }
+
+.red-btn {
+  @apply hover:bg-poke-red-600 font-lexend flex w-full justify-center rounded-4xl bg-[#E82933] px-6 py-3 text-white transition-colors;
+}

@@ -8,7 +8,7 @@ function RootLayout() {
     <div className="app-bg">
       <div className="phone-container">
         <Header />
-        <div className="flex flex-1 items-center justify-center overflow-y-auto overflow-x-hidden">
+        <div className="flex flex-1 items-center justify-center overflow-x-hidden overflow-y-auto">
           <Outlet />
         </div>
         <Navbar />
