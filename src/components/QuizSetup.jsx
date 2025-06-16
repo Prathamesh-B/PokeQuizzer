@@ -8,7 +8,7 @@ const QuizSetup = ({
   onStartQuiz,
 }) => {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-3 overflow-y-auto px-3 pt-1 pb-4">
+    <div className="flex h-full flex-col items-center gap-3 px-3 pt-1 pb-4">
       {/* Quiz Type Selection */}
       <div className="w-full max-w-md">
         <h3 className="font-poke mb-3 text-lg text-gray-700">Quiz Type</h3>
