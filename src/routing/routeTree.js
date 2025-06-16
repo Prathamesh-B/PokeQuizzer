@@ -3,6 +3,7 @@ import RootLayout from "../RootLayout";
 import { quizRoute } from "./quiz.route";
 import { homeRoute } from "./home.route";
 import { pokedexRoute } from "./pokedex.route";
+import { pokemonDetailsRoute } from "./pokemonDetails.route";
 import NotFoundPage from "../pages/NotFoundPage";
 
 export const rootRoute = createRootRoute({
@@ -14,4 +15,5 @@ export const routeTree = rootRoute.addChildren([
   quizRoute,
   homeRoute,
   pokedexRoute,
+  pokemonDetailsRoute,
 ]);
