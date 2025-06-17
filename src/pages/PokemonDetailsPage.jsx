@@ -64,7 +64,7 @@ function PokemonDetailsPage() {
   }
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="flex h-full flex-col w-full px-3 pt-1 pb-4">
       {/* Back Button */}
       <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
         <button

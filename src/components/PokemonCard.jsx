@@ -1,17 +1,12 @@
 import { useNavigate } from "@tanstack/react-router";
 import TypeBadge from "./TypeBadge";
+import { getStatColor } from "../utils/colorUtils";
 
 function PokemonCard({ pokemon }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate({ to: `/pokedex/${pokemon.id}` });
-  };
-
-  const getStatColor = (stat) => {
-    if (stat >= 100) return "text-green-600";
-    if (stat >= 70) return "text-yellow-600";
-    return "text-red-500";
   };
 
   const totalStats = pokemon.stats.reduce(
@@ -42,7 +37,7 @@ function PokemonCard({ pokemon }) {
       {/* Pokemon Info */}
       <div className="min-w-0 flex-1">
         <div className="mb-2 flex items-center gap-2">
-          <h3 className="truncate text-xl font-bold text-gray-800 capitalize">
+          <h3 className="font-poke truncate text-xl text-gray-800 capitalize">
             {pokemon.name}
           </h3>
         </div>
@@ -55,7 +50,7 @@ function PokemonCard({ pokemon }) {
         </div>
 
         {/* Stats Preview */}
-        <div className="flex items-center gap-4 text-sm">
+        <div className="font-lexend flex items-center gap-2 text-sm">
           <div className="flex items-center gap-1">
             <span className="text-gray-500">HP:</span>
             <span
@@ -79,7 +74,7 @@ function PokemonCard({ pokemon }) {
         </div>
 
         {/* Height & Weight */}
-        <div className="mt-2 flex gap-4 text-xs text-gray-500">
+        <div className="mt-2 flex gap-2 text-xs text-gray-500">
           <span>Height: {(pokemon.height / 10).toFixed(1)}m</span>
           <span>Weight: {(pokemon.weight / 10).toFixed(1)}kg</span>
         </div>

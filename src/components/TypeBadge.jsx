@@ -1,5 +1,3 @@
-import React from "react";
-
 const TYPE_COLORS = {
   normal: "bg-gray-400 text-gray-900 border-gray-400",
   fire: "bg-red-500 text-white border-red-500",
@@ -21,12 +19,12 @@ const TYPE_COLORS = {
 };
 
 function TypeBadge({ type }) {
-  const iconSrc = `./types/${type}-icon.svg`;
+  const iconSrc = `/types/${type}-icon.svg`;
   const colorClass =
     TYPE_COLORS[type] || "bg-gray-300 text-gray-900 border-gray-300";
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-semibold shadow-sm ${colorClass}`}
+      className={`inline-flex font-lexend items-center gap-1 rounded-full border px-2 py-0.5 text-xs shadow-sm ${colorClass}`}
       title={type.charAt(0).toUpperCase() + type.slice(1)}
     >
       <img src={iconSrc} alt={type} className="h-4 w-4" />
