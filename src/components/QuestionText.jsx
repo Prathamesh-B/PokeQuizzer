@@ -2,7 +2,7 @@ import { getQuestionText } from "../utils/quizUtils";
 
 const QuestionText = ({ question, quizType }) => {
   return (
-    <h3 className="mb-6 text-center text-xl font-bold">
+    <h3 className="font-poke mb-6 text-center text-xl">
       {getQuestionText(question, quizType)}
     </h3>
   );

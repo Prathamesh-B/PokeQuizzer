@@ -24,7 +24,7 @@ function TypeBadge({ type }) {
     TYPE_COLORS[type] || "bg-gray-300 text-gray-900 border-gray-300";
   return (
     <span
-      className={`inline-flex font-lexend items-center gap-1 rounded-full border px-2 py-0.5 text-xs shadow-sm ${colorClass}`}
+      className={`font-lexend inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs shadow-sm ${colorClass}`}
       title={type.charAt(0).toUpperCase() + type.slice(1)}
     >
       <img src={iconSrc} alt={type} className="h-4 w-4" />

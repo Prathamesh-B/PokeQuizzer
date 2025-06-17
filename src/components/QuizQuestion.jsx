@@ -3,7 +3,6 @@ import QuestionText from "./QuestionText";
 import AnswerChoices from "./AnswerChoices";
 import ProgressBar from "./ProgressBar";
 import Timer from "./Timer";
-import ResultFeedback from "./ResultFeedback";
 
 const QuizQuestion = ({
   question,
@@ -56,8 +55,6 @@ const QuizQuestion = ({
         answer={answer}
         quizType={quizType}
       />
-
-      <ResultFeedback result={result} answer={answer} quizType={quizType} />
     </div>
   );
 };

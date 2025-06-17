@@ -19,7 +19,9 @@ export function usePokedexLogic() {
 
   const updateDisplayedPokemon = useCallback(() => {
     let filtered = allPokemon;
-    filtered = filtered.filter((pokemon) => isPokemonInRegion(pokemon.id, region));
+    filtered = filtered.filter((pokemon) =>
+      isPokemonInRegion(pokemon.id, region),
+    );
     if (search.trim()) {
       const searchTerm = search.toLowerCase().trim();
       filtered = filtered.filter(
@@ -90,7 +92,9 @@ export function usePokedexLogic() {
 
   useEffect(() => {
     if (search.trim() && allPokemon.length > 0) {
-      const currentRegionPokemon = allPokemon.filter((p) => isPokemonInRegion(p.id, region));
+      const currentRegionPokemon = allPokemon.filter((p) =>
+        isPokemonInRegion(p.id, region),
+      );
       const searchResults = currentRegionPokemon.filter(
         (p) =>
           p.name.toLowerCase().includes(search.toLowerCase().trim()) ||

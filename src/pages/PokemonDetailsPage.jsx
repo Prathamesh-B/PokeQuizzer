@@ -1,15 +1,15 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "@tanstack/react-router";
 import PokemonDetails from "../components/PokemonDetails";
 
 function PokemonDetailsPage() {
   const { pokemonId } = useParams({ from: "/pokedex/$pokemonId" });
   const navigate = useNavigate();
-  const [pokemon, setPokemon] = React.useState(null);
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
+  const [pokemon, setPokemon] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function fetchPokemon() {
       setLoading(true);
       setError(null);
@@ -64,7 +64,7 @@ function PokemonDetailsPage() {
   }
 
   return (
-    <div className="flex h-full flex-col w-full px-3 pt-1 pb-4">
+    <div className="flex h-full w-full flex-col px-3 pt-1 pb-4">
       {/* Back Button */}
       <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3">
         <button

@@ -2,7 +2,7 @@ const ProgressBar = ({ questionNum, totalQuestions, score, streak }) => {
   return (
     <>
       {/* Progress and Stats Bar */}
-      <div className="mt-1 flex w-full max-w-2xl items-center justify-between">
+      <div className="font-lexend mt-1 flex w-full max-w-2xl items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="text-md font-semibold text-gray-700">
             Question {questionNum}/{totalQuestions}

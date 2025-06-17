@@ -15,33 +15,35 @@ const QuizResults = ({
   return (
     <div className="flex h-full flex-col items-center justify-center gap-6 px-3 pt-1 pb-4">
       <div className="text-center">
-        <h2 className="text-poke-blue-700 mb-2 text-3xl font-bold">
+        <h2 className="text-poke-blue-700 font-poke mb-2 text-3xl">
           Quiz Complete!
         </h2>
-        <p className="text-xl text-gray-700">{performance}</p>
+        <p className="font-lexend text-xl text-gray-700">{performance}</p>
       </div>
 
       <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-lg">
         <div className="space-y-4 text-center">
           <div>
-            <div className="text-poke-red-700 text-4xl font-bold">
+            <div className="text-poke-red font-poke text-4xl">
               {score}/{totalQuestions}
             </div>
-            <div className="text-gray-600">Correct Answers</div>
+            <div className="font-lexend text-gray-600">Correct Answers</div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-blue-600">
+              <div className="font-poke text-2xl text-blue-600">
                 {percentage}%
               </div>
-              <div className="text-sm text-gray-600">Accuracy</div>
+              <div className="font-lexend text-sm text-gray-600">Accuracy</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-green-600">
+              <div className="font-poke text-2xl text-green-600">
                 {maxStreak}
               </div>
-              <div className="text-sm text-gray-600">Best Streak</div>
+              <div className="font-lexend text-sm text-gray-600">
+                Best Streak
+              </div>
             </div>
           </div>
         </div>
@@ -49,13 +51,13 @@ const QuizResults = ({
 
       <div className="flex gap-4">
         <button
-          className="bg-poke-blue hover:bg-poke-blue-600 rounded-2xl px-6 py-3 font-bold text-white transition-colors"
+          className="font-lexend bg-poke-blue hover:bg-poke-blue-600 rounded-4xl px-6 py-3 text-white transition-colors"
           onClick={onPlayAgain}
         >
           Play Again
         </button>
         <button
-          className="rounded-2xl bg-gray-500 px-6 py-3 font-bold text-white transition-colors hover:bg-gray-600"
+          className="font-lexend rounded-4xl bg-gray-500 px-6 py-3 text-white transition-colors hover:bg-gray-600"
           onClick={onChangeSettings}
         >
           Change Settings

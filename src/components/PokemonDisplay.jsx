@@ -32,7 +32,7 @@ const PokemonDisplay = ({ question, quizType, result }) => {
         alt="Status LED"
         className="absolute bottom-4 left-21 h-10 w-10"
       />
-      <div className="absolute right-11 bottom-4 mb-2 font-bold text-gray-700">
+      <div className="absolute right-11 bottom-4 mb-2 font-mono font-bold text-gray-700">
         #{question.id.toString().padStart(3, "0")}
       </div>
     </div>

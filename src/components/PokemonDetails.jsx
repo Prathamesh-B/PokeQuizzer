@@ -8,7 +8,13 @@ import {
   FaWeight,
 } from "react-icons/fa";
 import TypeBadge from "./TypeBadge";
-import { GiHeartPlus, GiMagicSwirl, GiShield, GiSpeedometer, GiSwordBrandish } from "react-icons/gi";
+import {
+  GiHeartPlus,
+  GiMagicSwirl,
+  GiShield,
+  GiSpeedometer,
+  GiSwordBrandish,
+} from "react-icons/gi";
 import { getStatColor } from "../utils/colorUtils";
 
 function PokemonDetails({ pokemon }) {
@@ -32,7 +38,6 @@ function PokemonDetails({ pokemon }) {
       iconMap[statName] || <FaChartBar className="h-4 w-4 text-gray-500" />
     );
   };
-
 
   return (
     <div className="flex h-full flex-col overflow-y-auto px-4 pt-4 pb-6">
@@ -158,7 +163,7 @@ function PokemonDetails({ pokemon }) {
                 </div>
                 <div className="h-3 w-full overflow-hidden rounded-full bg-gray-200">
                   <div
-                    className={`bg-gradient-to-r ${getStatColor(stat.base_stat)} h-3 rounded-full shadow-sm transition-all duration-500 ease-out`}
+                    className={`bg-gradient-to-r ${getStatColor(stat.base_stat, true)} h-3 rounded-full shadow-sm transition-all duration-500 ease-out`}
                     style={{
                       width: `${Math.min((stat.base_stat / 200) * 100, 100)}%`,
                       animation: "slideIn 0.8s ease-out",
@@ -169,7 +174,6 @@ function PokemonDetails({ pokemon }) {
             ))}
           </div>
         </div>
-
 
         {/* Total Base Stats */}
         <div className="rounded-xl border-2 border-indigo-200 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 p-4 shadow-lg">
@@ -185,7 +189,6 @@ function PokemonDetails({ pokemon }) {
             </span>
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ export function getDifficultyRange(difficulty, quizType) {
   const baseDifficulty = DIFFICULTY_LEVELS.find((d) => d.id === difficulty);
 
   if (quizType === "generation") {
-    // For generation quiz, ensure we have multiple generations
     switch (difficulty) {
       case "easy":
         return [1, 251]; // Gen 1-2

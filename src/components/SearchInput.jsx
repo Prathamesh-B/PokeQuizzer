@@ -1,6 +1,5 @@
 import { FaSearch } from "react-icons/fa";
 
-// SearchInput.jsx
 function SearchInput({ search, setSearch, region }) {
   return (
     <div className="relative flex-1">
