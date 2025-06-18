@@ -10,7 +10,7 @@ function PokedexGrid({
   return (
     <div
       id="pokedex-scroll"
-      className="grid flex-1 grid-cols-1 gap-3 overflow-y-auto rounded-xl p-1 shadow-inner"
+      className="grid w-full flex-1 grid-cols-1 gap-3 overflow-y-auto rounded-xl p-1"
     >
       {displayedPokemon.length === 0 && (
         <div className="py-10 text-center text-gray-400">

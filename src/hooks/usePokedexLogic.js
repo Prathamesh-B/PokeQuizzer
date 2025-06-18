@@ -54,7 +54,7 @@ export function usePokedexLogic() {
   async function fetchMore() {
     if (!hasMore || loading) return;
     setLoading(true);
-    const limit = 20;
+    const limit = 1000;
     const offset = nextOffset;
     const maxOffset = region.offset + region.limit;
     const fetchLimit = Math.min(limit, maxOffset - offset);
